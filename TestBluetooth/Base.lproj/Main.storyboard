@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dD3-03-RV2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,106 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestBluetooth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNK-6e-GN5">
+                                <rect key="frame" x="150" y="87" width="75" height="30"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.30588235289999999" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="     Scan     ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="scanBtnPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="o8I-aO-TZS"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yuy-a2-4pT">
+                                <rect key="frame" x="0.0" y="125" width="375" height="493"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="4eq-C8-HWh">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4eq-C8-HWh" id="uib-SD-Vd2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="41i-Yt-x8V"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="45t-dV-fVQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wNK-6e-GN5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="67" id="GDq-jp-cnR"/>
+                            <constraint firstItem="Yuy-a2-4pT" firstAttribute="top" secondItem="wNK-6e-GN5" secondAttribute="bottom" constant="8" id="bYl-Rp-Jq4"/>
+                            <constraint firstItem="Yuy-a2-4pT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c5U-SM-e22"/>
+                            <constraint firstItem="Yuy-a2-4pT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="g0w-wK-9JN"/>
+                            <constraint firstItem="Yuy-a2-4pT" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="mww-2K-SRf"/>
+                            <constraint firstItem="wNK-6e-GN5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ujn-Fn-O4P"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="1wa-ul-0eW"/>
+                    <connections>
+                        <outlet property="tableView" destination="Yuy-a2-4pT" id="ljo-s1-qCJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="452" y="-380"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="XHz-2I-csk">
+            <objects>
+                <viewController id="dsf-0L-6Gy" customClass="SecondViewController" customModule="TestBluetooth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N1s-qC-QPz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCn-G0-EiQ">
+                                <rect key="frame" x="141" y="318.5" width="93" height="30"/>
+                                <state key="normal" title="Start iBeacon"/>
+                                <connections>
+                                    <action selector="startiBeacon" destination="dsf-0L-6Gy" eventType="touchUpInside" id="C9I-Wz-eNc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mCn-G0-EiQ" firstAttribute="centerX" secondItem="N1s-qC-QPz" secondAttribute="centerX" id="8qj-8W-K8V"/>
+                            <constraint firstItem="mCn-G0-EiQ" firstAttribute="centerY" secondItem="N1s-qC-QPz" secondAttribute="centerY" id="9hp-31-H2W"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fd6-GT-ddc"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="2xc-hn-Wd4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9AU-TV-nGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="433" y="350"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="gdB-wA-r58">
+            <objects>
+                <tabBarController id="dD3-03-RV2" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WBa-y1-CFS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dsf-0L-6Gy" kind="relationship" relationship="viewControllers" id="w0y-eF-Xpj"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="CVS-KA-bFV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SpM-q9-6s5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-527" y="28"/>
         </scene>
     </scenes>
 </document>
