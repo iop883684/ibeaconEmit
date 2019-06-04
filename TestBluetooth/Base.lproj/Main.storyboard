@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestBluetooth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="TestBluetooth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yuy-a2-4pT">
-                                <rect key="frame" x="0.0" y="125" width="375" height="493"/>
+                                <rect key="frame" x="0.0" y="125" width="375" height="542"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="4eq-C8-HWh">
@@ -65,7 +65,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="452" y="-380"/>
+            <point key="canvasLocation" x="1153" y="-693"/>
+        </scene>
+        <!--Scan View Controller-->
+        <scene sceneID="Vhb-8r-T7W">
+            <objects>
+                <viewController id="cip-yJ-o1T" customClass="ScanViewController" customModule="TestBluetooth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xDa-PU-aRT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEG-JA-wZr">
+                                <rect key="frame" x="158" y="318.5" width="59" height="30"/>
+                                <color key="backgroundColor" red="0.94288021330000005" green="0.32582515480000002" blue="0.41462302210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="   Scan   ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="selected" title="   Stop   "/>
+                                <connections>
+                                    <action selector="scanPressWithSender:" destination="cip-yJ-o1T" eventType="touchUpInside" id="TBp-9c-ggA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiM-AL-bW6">
+                                <rect key="frame" x="154" y="356" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yEG-JA-wZr" firstAttribute="centerX" secondItem="xDa-PU-aRT" secondAttribute="centerX" id="5IM-GN-etr"/>
+                            <constraint firstItem="yEG-JA-wZr" firstAttribute="centerY" secondItem="xDa-PU-aRT" secondAttribute="centerY" id="dKh-As-JcE"/>
+                            <constraint firstItem="MiM-AL-bW6" firstAttribute="centerX" secondItem="xDa-PU-aRT" secondAttribute="centerX" id="eEv-5l-jox"/>
+                            <constraint firstItem="MiM-AL-bW6" firstAttribute="top" secondItem="yEG-JA-wZr" secondAttribute="bottom" constant="7.5" id="enV-eI-YPU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cYl-JS-V5f"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="iDh-lv-VwY"/>
+                    <connections>
+                        <outlet property="lbDistance" destination="MiM-AL-bW6" id="PGE-TQ-TWV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qm4-GA-VS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="399" y="554"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="XHz-2I-csk">
@@ -76,10 +121,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCn-G0-EiQ">
-                                <rect key="frame" x="141" y="318.5" width="93" height="30"/>
-                                <state key="normal" title="Start iBeacon"/>
+                                <rect key="frame" x="121.5" y="318.5" width="132" height="30"/>
+                                <color key="backgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="   Start Peripheral   ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="startiBeacon" destination="dsf-0L-6Gy" eventType="touchUpInside" id="C9I-Wz-eNc"/>
+                                    <action selector="startiBeaconWithSender:" destination="dsf-0L-6Gy" eventType="touchUpInside" id="fHa-bP-mtJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -90,11 +139,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fd6-GT-ddc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="2xc-hn-Wd4"/>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="2xc-hn-Wd4"/>
+                    <connections>
+                        <outlet property="btStart" destination="mCn-G0-EiQ" id="zT9-AZ-pXS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9AU-TV-nGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="433" y="350"/>
+            <point key="canvasLocation" x="382" y="-118"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gdB-wA-r58">
@@ -107,7 +159,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="dsf-0L-6Gy" kind="relationship" relationship="viewControllers" id="w0y-eF-Xpj"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="CVS-KA-bFV"/>
+                        <segue destination="cip-yJ-o1T" kind="relationship" relationship="viewControllers" id="QM9-HT-GEg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SpM-q9-6s5" userLabel="First Responder" sceneMemberID="firstResponder"/>

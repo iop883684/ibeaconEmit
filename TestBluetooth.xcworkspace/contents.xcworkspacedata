@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:TestBluetooth.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <Group
+      location = "group:Pods"
+      name = "Targets Support Files">
+      <Group
+         location = "group:Pods/Target Support Files/Pods-TestBluetooth"
+         name = "Pods-TestBluetooth">
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-TestBluetooth/Pods-TestBluetooth.modulemap">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-TestBluetooth/Pods-TestBluetooth-acknowledgements.markdown">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-TestBluetooth/Pods-TestBluetooth-acknowledgements.plist">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-TestBluetooth/Pods-TestBluetooth-dummy.m">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-TestBluetooth/Pods-TestBluetooth-frameworks.sh">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-TestBluetooth/Pods-TestBluetooth-Info.plist">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-TestBluetooth/Pods-TestBluetooth-umbrella.h">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-TestBluetooth/Pods-TestBluetooth.debug.xcconfig">
+         </FileRef>
+         <FileRef
+            location = "group:Pods/Target Support Files/Pods-TestBluetooth/Pods-TestBluetooth.release.xcconfig">
+         </FileRef>
+      </Group>
+   </Group>
+</Workspace>

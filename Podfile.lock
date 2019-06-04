@@ -1,0 +1,16 @@
+PODS:
+  - SwiftyBluetooth (1.0.0)
+
+DEPENDENCIES:
+  - SwiftyBluetooth
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftyBluetooth
+
+SPEC CHECKSUMS:
+  SwiftyBluetooth: 9e26b1367f56aa60f35713f6d968382144bccfd5
+
+PODFILE CHECKSUM: 9b065f03144b861eea50bcff2fa6ef56a688aad0
+
+COCOAPODS: 1.6.1
